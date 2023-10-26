@@ -9,12 +9,14 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     date_joined = models.DateTimeField(default=timezone.now)
-    nacionality = models.TextField()
     age = models.IntegerField()
     nit = models.IntegerField()
+    name = models.CharField(200)
+    surname = models.CharField(200)
+    adress = models.CharField(200)
 
     USERNAME_FIELD = "email"
-    REQUIRED_FIELDS = ["nacionality","age","nit"]
+    REQUIRED_FIELDS = ["age","nit","name","surname","adress"]
 
     objects = CustomUserManager()
 
