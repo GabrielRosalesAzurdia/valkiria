@@ -6,7 +6,7 @@ class Habitaciones (models.Model):
 
 class HabitacionDetalle (models.Model):
     habitacion = models.ForeignKey("hotel.Habitaciones", on_delete=models.CASCADE)
-    locacion = models.CharField(200)
+    locacion = models.CharField( max_length=200)
     camasCant = models.IntegerField()
     precioCombo = models.FloatField()
 

@@ -11,9 +11,9 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     date_joined = models.DateTimeField(default=timezone.now)
     age = models.IntegerField()
     nit = models.IntegerField()
-    name = models.CharField(200)
-    surname = models.CharField(200)
-    adress = models.CharField(200)
+    name = models.CharField(max_length=200)
+    surname = models.CharField(max_length= 200)
+    adress = models.CharField(max_length= 200)
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ["age","nit","name","surname","adress"]
