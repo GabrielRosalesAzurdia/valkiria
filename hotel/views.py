@@ -1,6 +1,7 @@
 from rest_framework import viewsets
-from .models import HabitacionDetalle, Habitaciones, Reserva, Factura
-from .serializers import HabitacionDetalleSerializer, HabitacionesSerializer, ReservaSerializer, FacturaSerializer
+from .models import HabitacionDetalle, Habitaciones, Reserva, Factura, Usuario
+from .serializers import HabitacionDetalleSerializer, HabitacionesSerializer, ReservaSerializer, FacturaSerializer, UsuarioSerializer
+
 
 class HabitacionDetalleViewset (viewsets.ModelViewSet):
     queryset = HabitacionDetalle.objects.all()
@@ -17,3 +18,7 @@ class ReservaViewset (viewsets.ModelViewSet):
 class FacturaViewset(viewsets.ModelViewSet):
     queryset = Factura.objects.all()
     serializer_class = FacturaSerializer
+
+class UsuarioViewest (viewsets.ModelViewSet):
+     queryset = Usuario.objects.all()
+     serializer_class = UsuarioSerializer 
