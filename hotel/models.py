@@ -22,7 +22,7 @@ class HabitacionDetalle (models.Model):
     precioCombo = models.FloatField()
 
 class Reserva (models.Model):
-    usuario = models.ForeignKey("hotel.Usuario",on_delete=models.CASCADE)
+    usuario = models.ForeignKey("hotel.Usuario",on_delete=models.CASCADE,null=True, blank=True)
     habitacionDetalle = models.ForeignKey("hotel.HabitacionDetalle", on_delete=models.CASCADE)
     nocheIngreso = models.DateField()
     nocheSalida = models.DateField()
